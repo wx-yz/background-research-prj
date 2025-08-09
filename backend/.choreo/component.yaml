@@ -10,3 +10,7 @@ endpoints:
     type: REST
     networkVisibilities:
       - Public
+dependencies:
+    connectionReferences:
+    - name: OpenAIConn
+      resourceRef: thirdparty:OpenAI/v1

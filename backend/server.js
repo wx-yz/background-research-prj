@@ -26,7 +26,8 @@ app.post('/api/summarize', async (req, res) => {
     const system = 'You are an analyst. Given a company and vertical, produce a concise, structured summary highlighting investments, acquisitions, partnerships, joint ventures, notable products, and strategic moves. Keep it under 250 words. Use bullets and emojis where fitting.';
 
     // In Choreo: OpenAIConn provides injected credentials. Read from env assuming the connection maps variables.
-    const apiKey = process.env.OPENAI_API_KEY || process.env.OPENAI_KEY || '';
+    const apiKey = process.env.CHOREO_OPENAICONN_OPENAI_API_KEY || '';
+    const serviceUrl = process.env.CHOREO_OPENAICONN_SERVICEURL || '';
 
     let summaryText = '';
 
@@ -36,7 +37,7 @@ app.post('/api/summarize', async (req, res) => {
       summaryText = `🧾 Mock Summary\n\n• Investments: Example Capital in HealthTech A, Series B in Diagnostics B\n• Partnerships: Collaboration with Pharma C on wearable trials\n• JVs: Joint venture with Provider D for telemedicine\n• Products: Health wearable ecosystem; ResearchKit expansions\n• Strategy: Doubling down on preventive care, AI diagnostics, and remote monitoring`;
     } else {
       // Call OpenAI chat completions
-      const completion = await fetch('https://api.openai.com/v1/chat/completions', {
+      const completion = await fetch(serviceUrl + '/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
