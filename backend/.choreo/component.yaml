@@ -13,4 +13,4 @@ endpoints:
 dependencies:
     connectionReferences:
     - name: OpenAIConn
-      resourceRef: thirdparty:OpenAI/v1
+      resourceRef: thirdparty:OpenAISvc/v1
