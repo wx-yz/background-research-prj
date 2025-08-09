@@ -28,8 +28,8 @@ function UserBadge({ user }) {
 }
 
 function queryBackendUrl() {
-  // window.config is loaded via public/config.js script tag in index.html
-  const apiUrl = window?.config?.apiUrl || '';
+  // Prefer Choreo managed-auth mounted window.configs.apiUrl; fallback to local window.config.apiUrl
+  const apiUrl = (window?.configs?.apiUrl || window?.config?.apiUrl || '').replace(/\/$/, '');
   return apiUrl;
 }
 
