@@ -6,7 +6,7 @@ endpoints:
     displayName: Summarize API
     service:
       basePath: /
-      port: 4000
+      port: 8080
     type: REST
     networkVisibilities:
       - Public
