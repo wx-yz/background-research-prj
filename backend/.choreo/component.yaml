@@ -1,0 +1,12 @@
+schemaVersion: 1.2
+
+# Incoming connection details for the backend service
+endpoints:
+  - name: summarize-api
+    displayName: Summarize API
+    service:
+      basePath: /
+      port: 4000
+    type: REST
+    networkVisibilities:
+      - Public
