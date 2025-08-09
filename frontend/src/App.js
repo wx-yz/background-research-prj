@@ -12,7 +12,7 @@ const App = () => {
   const [error, setError] = useState('');
 
   // Get API URL from config
-  const apiUrl = window.config?.apiUrl || 'http://localhost:4000';
+  const apiUrl = window.configs?.apiUrl || 'http://localhost:4000';
 
   useEffect(() => {
     checkAuthentication();
