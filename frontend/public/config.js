@@ -1,3 +1,3 @@
-window.config = {
-    apiUrl: '/choreo-apis/backgroundresearchproj/bg-research-backend/v1'
+window.configs = {
+    apiUrl: '/choreo-apis/backgroundresearchproj/bg-research-backend/v1',
 };
