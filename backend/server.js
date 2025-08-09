@@ -26,8 +26,8 @@ app.post('/api/summarize', async (req, res) => {
     const system = 'You are an analyst. Given a company and vertical, produce a concise, structured summary highlighting investments, acquisitions, partnerships, joint ventures, notable products, and strategic moves. Keep it under 250 words. Use bullets and emojis where fitting.';
 
     // In Choreo: OpenAIConn provides injected credentials. Read from env assuming the connection maps variables.
-    const apiKey = process.env.CHOREO_OPENAICONN_OPENAI_API_KEY;
-    const serviceUrl = process.env.CHOREO_OPENAICONN_SERVICEURL;
+    const apiKey = process.env.CHOREO_OPENAICONNECTION_OPENAI_API_KEY;
+    const serviceUrl = process.env.CHOREO_OPENAICONNECTION_SERVICEURL;
 
     let summaryText = '';
 

@@ -12,5 +12,5 @@ endpoints:
       - Public
 dependencies:
     connectionReferences:
-    - name: OpenAIConn
-      resourceRef: thirdparty:OpenAISvc/v1
+    - name: OpenAIConnection
+      resourceRef: thirdparty:OpenAIConn/v1
