@@ -1,0 +1,17 @@
+Create an app that ask the user to enter a natural langague query about any aspect of a company and the vertical they operate in and generate a summary that highlight their investments, companies, joint ventures and so on in that vertical. The app should have a React fronted and a nodejs backend. There should be a beatifully designed React UI that calls the backend endpoint. The backend endpoint should be read from the config.js file that's in the public directory. Format of config.js is ```window.config = {
+    apiUrl: 'https://api.example.com'
+};
+``` In index.html file inside the public directory, add a script tag to include the config.js file inside the `<body>` tag like this `<script src="%PUBLIC_URL%/config.js"></script>`. In the React component, access the configuration variables by referencing the window.config object `const apiUrl = window.config.apiUrl;`. Create the backend using NodeJS. Commit all the generated code to the current git repo and push changes. Then deploy React frontend and the NodeJS backend to Choreo.
+
+In the backend code, create an endpoint that accepts a POST request with a natural language query from the frontend. Deploy the frontend and the backend as two separate components in Choreo under existing 'BackgroundResearchPrj' project. In the backend code, use the connection named 'OpenAIConn' to talk to the OpenAI API. Then send the response back to the frontend. The frontend should display the summary in as a beautifully rendered view with relevant emojis.
+
+In the frontend, use Choreo managed authentication. Sign in should be a button with this URL `<button onClick={() => {window.location.href="/auth/login"}}>Login</button>`. User information should be retrieved and display as follows ```import Cookies from 'js-cookie';
+    // Read userinfo cookie value.
+    const encodedUserInfo = Cookies.get('userinfo')
+    // Decode the value. 
+    const userInfo = JSON.parse(atob(encodedUserInfo))
+    // Store the value in a preferred browser-based storage if needed.
+    // Clear the cookie.
+    Cookies.remove('userinfo', { path: <post-login-path> })```. Choreo also supports the following end point to get user info `const response = await fetch('/auth/userinfo')`. Sign out functionality should be like this ```<button onClick={async () => {
+    window.location.href = `/auth/logout?session_hint=${Cookies.get('session_hint')}`;
+}}>Logout</button>```. When the frontend loads, it should display a beautifully designed login button. After the user logs in, it should display user information at top right along with a logout button. Then the main UI should be a form to submit the query and a button to submit the query. The response from the backend should be displayed in a nicely formatted view with relevant emojis.
