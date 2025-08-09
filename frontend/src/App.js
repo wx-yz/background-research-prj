@@ -69,6 +69,8 @@ const App = () => {
     try {
       const response = await axios.post(`${apiUrl}/api/summarize`, {
         query: query.trim()
+      }, {
+        withCredentials: true
       });
 
       setSummary(response.data.summary);

@@ -1,3 +1,3 @@
 window.config = {
-    apiUrl: 'https://api.example.com'
+    apiUrl: '/choreo-apis/backgroundresearchproj/bg-research-backend/v1'
 };
